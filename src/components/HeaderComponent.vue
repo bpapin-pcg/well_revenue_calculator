@@ -59,7 +59,6 @@ export default {
         // Disable buttons if input is the same as old input
         watch(() => main.$state.inputs, function() {
             if (JSON.stringify(main.getInputs) !== JSON.stringify(main.getOldInputs)) {
-                console.log("wtf")
                 disabled.value = false;
             } else {
                 disabled.value = true;

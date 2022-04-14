@@ -101,7 +101,7 @@ export default {
                 investment_chart_labels.push(`PCG Deferment Option ${option.option_number} @ ${option.interest_rate * 100}%`);
             }
             investment_chart_labels.push("PCG Investor Program After 3 Years"); 
-            investment_chart_labels.push(`Personal Investment Plan @ 8% After ${acctAnalysis.personal_investment_plan.years_invested} Years`);
+            investment_chart_labels.push(`Personal Investment Plan @ ${acctAnalysis.personal_investment_plan.interest_rate * 100}% After ${acctAnalysis.personal_investment_plan.years_invested} Years`);
 
             formatDataForChart(acctAnalysis);
         }, {deep: true});

@@ -140,7 +140,7 @@ export default {
         }, {deep: true});
 
         function addOption() {
-            showForm.value = !showForm.value;
+          showForm.value = !showForm.value;
         }
 
         async function generateDeferment() {
@@ -148,7 +148,7 @@ export default {
                 const user = await app.logIn(Realm.Credentials.anonymous());
                 const data = await user.functions.buildDefermentObject(main.getAcctAnalysis.cash_deal.pcg_offer, this.interest_rate, defermentOptions.value.length + 1, this.num_years, this.custom_earnest);
                 if (data) {
-                    defermentOptions.value.push(data);
+                    defermentOptions.value.push(data); // IMPORTANT: Right here defermentOptions is a reference to the store because we set it in line 137, so by pushing a new deferment, we are updating the acctAnalysis global object
                     alertStore.setSuccessMsg("Sucessfully generated deferment option")
                     this.custom_earnest = null;
                     this.num_years = null;

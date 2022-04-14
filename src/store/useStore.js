@@ -37,6 +37,7 @@ export const useAccountStore = defineStore("main", {
             return state.oldInputs
         },
         getAcctAnalysis: (state) => {
+            console.log(state.acctAnalysis)
             return state.acctAnalysis
         }
     },

@@ -1,17 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app">
+    <router-view />
+    <!-- <SearchAutocomplete />
+    <InputCard />
+    <ChartComponent />
+    <DefermentTable />
+    <div> {{ noAccounts }} </div> -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import ChartComponent from './components/ChartComponent.vue'
+// import SearchAutocomplete from './components/SearchAutocomplete.vue'
+// import InputCard from './components/InputCard.vue'
+// import DefermentTable from './components/DefermentTable.vue'
+// import HomePage from './components/HomePage.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld,
+    // SearchAutocomplete,
+    // ChartComponent,
+    // InputCard,
+    // DefermentTable,
+    //HomePage
   },
-};
+  setup() {
+    
+  }
+}
 </script>
 
 <style>
@@ -21,6 +38,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

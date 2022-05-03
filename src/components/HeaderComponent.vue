@@ -8,8 +8,8 @@
                     <div class="hidden h-16 w-16 rounded-full sm:block bg-navy text-white font-sans text-4xl"><p class="pt-2.5">{{main.getAccount.name[0]}}</p></div>
                     <div>
                     <div class="flex items-center">
-                        <div class="sm:hidden h-16 w-16 rounded-full sm:block bg-navy text-white font-sans text-4xl"><p class="align-middle">1</p></div>
-                        <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">{{main.getAccount.name}}</h1>
+                        <div class="sm:hidden h-16 w-16 rounded-full sm:block bg-navy text-white font-sans text-4xl"><p class="pt-2.5">{{main.getAccount.name[0]}}</p></div>
+                        <h1 class="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 truncate">{{main.getAccount.name}}</h1>
                     </div>
                     <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
                         <dt class="sr-only">Company</dt>
@@ -30,7 +30,7 @@
                     <button @click="main.resetInputs()" class="mt-5 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
                         Reset
                     </button>
-                    <button type="button" @click="main.setOldInputs()" :disabled="disabled" class="mt-5 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-navy hover:bg-lightnavy">
+                    <button type="button" @click="main.setOldInputs()" :disabled="disabled" v-bind:class="{ disabled: disabled }" class="mt-5 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-navy hover:bg-lightnavy">
                         Run Analysis
                     </button>
                 </div>
@@ -76,3 +76,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+.disabled {
+    background-color: rgba(133, 133, 133, 0.688);
+}
+</style>

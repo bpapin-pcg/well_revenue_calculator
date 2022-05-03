@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-full mt-5">
+  <div class="min-h-full bg-navy">
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
@@ -43,9 +43,9 @@
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
+    <!-- <div class="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0"> -->
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex flex-col flex-grow bg-navy pt-5 pb-4 overflow-y-auto">
+      <!-- <div class="flex flex-col flex-grow bg-navy pt-5 pb-4 overflow-y-auto">
         <div class="flex items-center flex-shrink-0 px-4">
           <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg" alt="Easywire logo" />
         </div>
@@ -66,17 +66,17 @@
           </div>
         </nav>
       </div>
-    </div>
+    </div> -->
     
-    <div class="lg:pl-64 flex flex-col flex-1">
+    <div class="lg:pl-64 flex flex-col h-screen flex-1">
       <!-- <HeaderBanner /> -->
-      <div class="relative flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none mt-32">
-        <button type="button" class="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden" @click="sidebarOpen = true">
+      <div class="relative flex-shrink-0 flex h-16 bg-navy border-b border-gray-200 lg:border-none align-middle m-32">
+        <button type="button" class="border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
           <MenuAlt1Icon class="h-6 w-6" aria-hidden="true" />
         </button>
         <!-- Search bar -->
-        <div class="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8 mt-5">
+        <div class="flex-1 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8 h-2/3">
           <SearchAutocomplete />
         </div>
       </div>

@@ -5,17 +5,17 @@
         <SearchIcon class="h-5 ml-2 w-5" aria-hidden="true" />
       </div>
       <input class="block w-full h-full pl-8 pr-3 py-2 rounded-lg text-gray-900 placeholder-gray-500 sm:text-sm" type="search" autocomplete="off" placeholder="Search for an Account" v-model="search" @input="onChange"/>
-      <nav v-show="isOpen" class="h-96 overflow-y-auto" aria-label="Directory">
-        <ul v-click-outside="handleClickOutside" role="list" class="relative text-left z-10 divide-y divide-gray-200 bg-white">
+      <nav v-show="isOpen" class="h-96 overflow-y-auto shadow-lg" aria-label="Directory">
+        <ul v-click-outside="handleClickOutside" role="list" class="relative shadow-lg text-left z-10 divide-y divide-gray-200 bg-white">
           <li v-for="result in results" :key="result._id" @click="setResult(result)">
-            <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-300 focus-within:ring-2 focus-within:ring-inset max-h-10 focus-within:ring-indigo-500">
+            <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-300 max-h-10">
               <div class="flex-1 min-w-0">
                 <!-- Extend touch target to entire panel -->
                 <span class="absolute inset-0" aria-hidden="true" />
                 <span class="['truncate', selected && 'font-semibold']">
                   {{ result.name }}
                 </span>
-                <span :class="['ml-2 truncate text-gray-500', active ? 'text-indigo-200' : 'text-gray-500']">
+                <span class="ml-2 truncate text-gray-500">
                   {{ result.confirmed_email_addresses }}
                 </span>
               </div>
@@ -116,6 +116,7 @@ export default {
               },
           ];
           let searchResults = await accountCollection.aggregate(pipeline);
+
           results.value = searchResults;
           isOpen.value = true;
       } else {

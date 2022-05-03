@@ -1,19 +1,17 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="px-4 sm:px-6 lg:px-8">
-    <div class="sm:flex sm:items-center">
-      <div class="sm:flex-auto">
+    <div class="flex items-center">
+      <div class="flex-auto">
         <h1 class="text-xl rounded-lg font-semibold text-left">Deferment Options</h1>
-        <!-- <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p> -->
       </div>
-      <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-        <button  v-if="!showForm" type="button" @click="addOption" class="inline-flex items-center justify-center rounded-md border border-transparent bg-navy px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-lightnavy focus:outline-none focus:ring-2 sm:w-auto">Add Option</button>
+      <div class="mt-0 sm:mr-4">
+        <button  v-if="!showForm" type="button" @click="addOption" class="inline-flex items-center ml-2 justify-center rounded-md border border-transparent bg-navy px-4 py-2 text-sm font-medium shadow-sm hover:bg-lightnavy text-white sm:w-auto">Add Option</button>
         <button  v-if="showForm" type="button" @click="addOption" class="inline-flex items-center justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 sm:w-auto">Cancel</button>
         <button type="button" @click="generateDeferment" v-if="showForm" class="inline-flex items-center ml-2 justify-center rounded-md border border-transparent bg-navy px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-lightnavy focus:outline-none focus:ring-2 sm:w-auto">Generate Deferment</button>
       </div>
     </div>
     <div v-if="showForm" class="mt-5">
-        <!-- <h1 class="text-left pl-5 pt-3">Oil</h1> -->
         <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <!-- Card -->
             <div class="p-5 shadow-md rounded-lg bg-white overflow-hidden rounded-lg">

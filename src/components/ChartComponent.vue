@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-row p-8 space-x-6">
-        <div class="bg-white overflow-hidden shadow-md rounded-lg w-1/2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 sm:p-8 space-y-6 sm:space-y-0 box-border py-5">
+        <div class="bg-white shadow-md rounded-lg sm:mr-3">
             <div class="px-4 py-5 sm:p-6">
                 <canvas id="well_rev_chart" />
             </div>
         </div>
-        <div class="bg-white overflow-hidden shadow-md rounded-lg w-1/2">
+        <div class="bg-white shadow-md rounded-lg sm:ml-3">
             <div class="px-4 py-5 sm:p-6">
                 <canvas id="investment_chart" />
             </div>
